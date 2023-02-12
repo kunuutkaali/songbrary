@@ -1,0 +1,11 @@
+extends ../layout
+
+block content
+    if locals.errorMessage
+        p #{locals.errorMessage}
+    h2 New song 
+    form(action="/songs" method="POST")
+        include ../includes/_form_fields
+        a(href="/") cancel 
+        button(type="submit") Create
+    
